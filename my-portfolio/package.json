@@ -1,5 +1,5 @@
 {
-  "name": "myportfolio",
+  "name": "my-portfolio",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -13,6 +13,7 @@
     "@tailwindcss/vite": "^4.1.14",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
+    "react-router-dom": "^7.9.3",
     "tailwindcss": "^4.1.14"
   },
   "devDependencies": {
