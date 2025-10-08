@@ -4,6 +4,7 @@ import { AnimatePresence } from "framer-motion";
 import Home from "./home.tsx"
 import Navbar from "../header.tsx";
 import About from "./about.tsx";
+import Certifications from "./certifications.tsx";
 const Parent: React.FC= () =>{
     const location= useLocation();
     return(
@@ -13,8 +14,8 @@ const Parent: React.FC= () =>{
             <Routes location={location} key={location.pathname}>
         <Route path="/" element={<Home />} />             
         <Route path="/about" element={<About />} />       
-        {/* <Route path="/projects" element={<Projects />} /> 
-        <Route path="/certifications" element={<Certifications />} /> */}
+        {/* <Route path="/projects" element={<Projects />} /> */}
+        <Route path="/certifications" element={<Certifications />} />
       </Routes>
     </AnimatePresence>
     </>

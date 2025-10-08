@@ -6,7 +6,7 @@ import github from "../assets/github.png"
 const About: React.FC = () => {
   return (
     <motion.section
-      className=" flex flex-col md:flex-row items-start justify-between px-10 md:px-20 py-10"
+      className=" flex flex-col md:flex-row items-center-safe justify-between px-10 md:px-20 py-10 overflow-hidden md:min-h-[85vh]"
       initial={{ opacity: 0, x: 100 }}
       animate={{ opacity: 1, x: 0 }}
       exit={{ opacity: 0, x: -100 }}
