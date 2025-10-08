@@ -8,7 +8,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path='/' element={<Parent/>}/>
+        <Route path='/*' element={<Parent/>}/>
       </Routes>
     </Router>
   )
