@@ -3,7 +3,7 @@ import whatsapplogo from "./assets/whatsapp.png";
 import { Link } from "react-router-dom";
 const Navbar: React.FC= () => { 
     return( 
-    <nav className=" px-6 py-0 flex justify-between sticky fixed top-0 left-0 w-full"> 
+    <nav className=" px-6 py-0 flex justify-between sticky top-0 left-0 w-full"> 
     {/* Logo / Name */} {/* <div className="text-xl font-bold">Prajwol Khadka</div> */} {/* Navigation Links */} 
     <ul className=" flex space-x-8 items-center"> 
         <li> 
