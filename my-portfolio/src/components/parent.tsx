@@ -7,6 +7,7 @@ const Home = lazy(() => import("./home.tsx"));
 const About = lazy(() => import("./about.tsx"));
 const Certifications = lazy(() => import("./certifications.tsx"));
 const Media = lazy(() => import("./media.tsx"));
+const Project = lazy(() => import("./projects.tsx"));
 const Parent: React.FC= () =>{
     const location= useLocation();
     return(
@@ -17,7 +18,7 @@ const Parent: React.FC= () =>{
           <Routes location={location} key={location.pathname}>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
-            {/* <Route path="/projects" element={<Projects />} /> */}
+            <Route path="/project" element={<Project/>} />
             <Route path="/certifications" element={<Certifications />} />
             <Route path="/media" element={<Media />} />
           </Routes>
