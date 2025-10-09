@@ -15,6 +15,8 @@ const Navbar: React.FC= () => {
             <a href="#projects" className="text-white uppercase tracking-widest"  style={{ fontFamily: "'Doto', sans-serif" }}> Projects </a> </li> 
         <li> 
             <Link to="/certifications" className="text-white uppercase tracking-widest"  style={{ fontFamily: "'Doto', sans-serif" }}> Certifications </Link> </li> 
+         <li> 
+            <Link to="#mediacoverage" className="text-white uppercase tracking-widest"  style={{ fontFamily: "'Doto', sans-serif" }}> Media Coverage </Link> </li>   
         </ul>
         <div className="ml-auto">
          <a href="https://wa.me/9841394638" 

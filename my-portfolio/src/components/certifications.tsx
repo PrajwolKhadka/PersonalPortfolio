@@ -251,6 +251,13 @@ const certificates: Certificate[] = [
     date: "Sep 2025",
     image: "/certificates/microsoftAI.png",
   },
+   {
+    name: "Python Fundamentals for Web Development Program",
+    institute: "Dataquest",
+    link: "https://app.dataquest.io/verify_cert/3798S4SXYATL3T7FHN0N/",
+    date: "Oct 2025",
+    image: "/certificates/wdp.png",
+  },
   {
     name: "Intermediate Python",
     institute: "Dataquest",
@@ -271,6 +278,13 @@ const certificates: Certificate[] = [
     link: "https://www.life-global.org/certificate/4ee8aafa-3693-404b-a44f-0acd144d46a6",
     date: "Sep 2025",
     image: "/certificates/agile.png",
+  },
+   {
+    name: "Tooling Essentials for Python Users",
+    institute: "Dataquest",
+    link: "https://app.dataquest.io/verify_cert/YA7J5TB25X19LD0XG3SK/",
+    date: "Oct 2025",
+    image: "/certificates/tooling.png",
   },
   {
     name: "Introduction to Git and Version Control",
