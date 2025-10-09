@@ -397,13 +397,13 @@ const Certifications: React.FC = () => {
         {/* Arrows */}
         <button
           onClick={() => scroll("left")}
-          className="absolute left-0 top-1/2 -translate-y-1/2 z-10 p-2 sm:p-3 bg-gray-800 text-white rounded-full hover:bg-gray-700"
+          className="absolute left-0 top-40 -translate-y-1/2 z-10 p-2 sm:p-3 bg-gray-800 text-white rounded-full hover:bg-gray-700"
         >
           <FaChevronLeft />
         </button>
         <button
           onClick={() => scroll("right")}
-          className="absolute right-0 top-1/2 -translate-y-1/2 z-10 p-2 sm:p-3 bg-gray-800 text-white rounded-full hover:bg-gray-700"
+          className="absolute right-0 top-40 -translate-y-1/2 z-10 p-2 sm:p-3 bg-gray-800 text-white rounded-full hover:bg-gray-700"
         >
           <FaChevronRight />
         </button>
@@ -454,7 +454,7 @@ const Certifications: React.FC = () => {
 
       {/* Modal */}
       {modalIndex !== null && (
-        <div className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 p-4">
+        <div className="fixed inset-0 bg-black bg-opacity-80 flex flex-col items-center justify-center z-50 p-4">
           <button
             className="absolute top-5 right-5 text-white text-2xl p-2 hover:text-gray-300"
             onClick={closeModal}
@@ -473,6 +473,7 @@ const Certifications: React.FC = () => {
           >
             <FaChevronRight />
           </button>
+          <h2 className="text-2xl flex font-bold text-white mb-4 pr-10" style={{ fontFamily: "Merriweather, serif" }} >{certificates[modalIndex].name}</h2>
           <img
             src={certificates[modalIndex].image}
             alt={certificates[modalIndex].name}

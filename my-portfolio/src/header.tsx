@@ -3,7 +3,7 @@ import whatsapplogo from "./assets/whatsapp.png";
 import { Link } from "react-router-dom";
 const Navbar: React.FC= () => { 
     return( 
-    <nav className=" px-6 py-0 flex justify-between sticky top-0 left-0 w-full"> 
+    <nav className=" px-6 py-0 flex justify-between sticky top-0 left-0 w-full bg-gray-900 bg-opacity-90 backdrop-blur-sm z-50"> 
     {/* Logo / Name */} {/* <div className="text-xl font-bold">Prajwol Khadka</div> */} {/* Navigation Links */} 
     <ul className=" flex space-x-8 items-center"> 
         <li> 
@@ -16,7 +16,7 @@ const Navbar: React.FC= () => {
         <li> 
             <Link to="/certifications" className="text-white uppercase tracking-widest"  style={{ fontFamily: "'Doto', sans-serif" }}> Certifications </Link> </li> 
          <li> 
-            <Link to="#mediacoverage" className="text-white uppercase tracking-widest"  style={{ fontFamily: "'Doto', sans-serif" }}> Media Coverage </Link> </li>   
+            <Link to="/media" className="text-white uppercase tracking-widest"  style={{ fontFamily: "'Doto', sans-serif" }}> Media Coverage </Link> </li>   
         </ul>
         <div className="ml-auto">
          <a href="https://wa.me/9841394638" 

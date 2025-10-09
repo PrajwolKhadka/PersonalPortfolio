@@ -16,7 +16,7 @@ const About: React.FC = () => {
         <h1 className="text-7xl md:text-[4rem]  text-white font-bold" style={{ fontFamily: 'Poltawski Nowy, serif' }}>
           About Me
         </h1>
-        <p className="text-gray-300 text-lg leading-relaxed max-w-2xl" style={{fontFamily: 'Merriweather, serif'}}>
+        <p className="text-gray-300 text-lg leading-relaxed max-w-2xl text-justify" style={{fontFamily: 'Merriweather, serif'}}>
           I’m <span className="text-white font-semibold">Prajwol Khadka</span>, a
           passionate software developer and VR enthusiast. I love building immersive,
           interactive experiences that merge technology and education to make
