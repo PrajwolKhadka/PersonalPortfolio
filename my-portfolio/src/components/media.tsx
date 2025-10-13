@@ -88,7 +88,6 @@ const MediaCarousel: React.FC<MediaCarouselProps> = ({ title, items, onItemClick
     if (!containerRef.current) return;
     const card = containerRef.current.querySelector("div:first-child"); 
     if (!card) return;
-    const style = window.getComputedStyle(card as HTMLElement);
     const cardWidth = (card as HTMLElement).offsetWidth + 16; 
     
     containerRef.current.scrollBy({
