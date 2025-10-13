@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { FaTimes, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 interface MediaItem {
@@ -203,6 +203,15 @@ const Media: React.FC = () => {
   const videos = media.filter((m) => m.type === "video");
   const images = media.filter((m) => m.type === "image");
   const websites = media.filter((m) => m.type === "website");
+  useEffect(() => {
+      const handleKeyDown = (e: KeyboardEvent) => {
+        if (modalIndex !== null) {
+          if (e.key === "Escape") closeModal();
+        }
+      };
+      window.addEventListener("keydown", handleKeyDown);
+      return () => window.removeEventListener("keydown", handleKeyDown);
+    }, [modalIndex]);
   let currentIndex = 0;
   const videoStartIndex = currentIndex;
   currentIndex += videos.length;
