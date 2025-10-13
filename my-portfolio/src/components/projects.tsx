@@ -33,7 +33,7 @@ const projects: project[] = [
   },
      {
     name: "Personal Portfolio",
-    desc: "A responsive personal portfolio website built to showcase projects, certifications, and professional achievements. Designed with a modern UI using React and Tailwind CSS, featuring smooth animations with Framer Motion and deployed on a custom domain. The site highlights academic and technical accomplishments through a structured, minimal design.",
+    desc: "A responsive personal portfolio website built to showcase projects, certifications, and professional achievements. Designed with a modern UI using React and Tailwind CSS, featuring smooth animations with Framer Motion and deployed on a custom domain using Netlify. The site highlights academic and technical accomplishments through a structured, minimal design.",
     link: "https://github.com/PrajwolKhadka/PersonalPortfolio",
     website:"https://prajwolkhadka.com.np",
     image: "/projects/port.png",
