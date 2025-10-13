@@ -41,7 +41,7 @@ const projects: project[] = [
      {
     name: "ByayamSetu: Fitness Companion UI/UX",
     desc: "A mobile fitness companion app concept focused on enhancing workout consistency and user engagement. Designed as part of a UI/UX project, it features intuitive navigation, personalized workout insights, and a clean, minimal interface optimized for daily usability. The design was created using Figma, emphasizing accessibility and visual balance.",
-    link: "https://app.dataquest.io/verify_cert/3798S4SXYATL3T7FHN0N/",
+    link: "https://www.figma.com/proto/PA9WRHco8mm3Qd0SjZVYuZ/ByayamSetu?page-id=0%3A1&node-id=1-2062&starting-point-node-id=1%3A2062&t=Y0tJvXEiFDUnNsWO-1",
     website:"",
     image: "/projects/ui.png",
   },

@@ -8,6 +8,7 @@ const About = lazy(() => import("./about.tsx"));
 const Certifications = lazy(() => import("./certifications.tsx"));
 const Media = lazy(() => import("./media.tsx"));
 const Project = lazy(() => import("./projects.tsx"));
+const Blog = lazy(() => import("./blogs.tsx"));
 const Parent: React.FC= () =>{
     const location= useLocation();
     return(
@@ -21,6 +22,7 @@ const Parent: React.FC= () =>{
             <Route path="/project" element={<Project/>} />
             <Route path="/certifications" element={<Certifications />} />
             <Route path="/media" element={<Media />} />
+            <Route path="/blogs" element={<Blog />} />
           </Routes>
         </Suspense>
       </AnimatePresence>
