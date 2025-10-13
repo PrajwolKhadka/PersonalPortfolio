@@ -224,7 +224,7 @@
 // export default Certifications;
 
 
-import React, { useState } from "react";
+import React, { useState, useEffect} from "react";
 import { FaChevronLeft, FaChevronRight, FaTimes } from "react-icons/fa";
 import { motion } from "framer-motion";
 
@@ -371,6 +371,17 @@ const Certifications: React.FC = () => {
   const nextModal = () =>
     setModalIndex((prev) => (prev !== null ? (prev === certificates.length - 1 ? 0 : prev + 1) : null));
 
+   useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (modalIndex !== null) {
+        if (e.key === "ArrowLeft") prevModal();
+        if (e.key === "ArrowRight") nextModal();
+        if (e.key === "Escape") closeModal();
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [modalIndex]);
   return (
     <motion.section
       initial={{ opacity: 0, y: 50 }}
