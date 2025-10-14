@@ -238,18 +238,18 @@ interface Certificate {
 
 const certificates: Certificate[] = [
   {
-    name: "Data Literacy",
-    institute: "Data Camp",
-    link: "https://www.datacamp.com/skill-verification/DL0033501861677",
-    date: "Oct 2025",
-    image: "/certificates/dl.png",
-  },
-  {
     name: "Career Essentials in Generative AI by Microsoft and Linkedin",
     institute: "Microsoft",
     link: "https://www.linkedin.com/learning/certificates/9b4585985382987de0506263843e44b6141002ae4a1891eb9a5aeb24fec42847?u=2039756",
     date: "Sep 2025",
     image: "/certificates/microsoftAI.png",
+  },
+  {
+    name: "Fundamentals of Python and Generative AI",
+    institute: "Dataquest",
+    link: "https://app.dataquest.io/view_cert/Q2EA1L8EKVJYN3FHJ7H6",
+    date: "Sep 2025",
+    image: "/certificates/fundamentals.png",
   },
   {
     name: "Intermediate Python and APIs",
@@ -258,7 +258,7 @@ const certificates: Certificate[] = [
     date: "Oct 2025",
     image: "/certificates/inpyapi.png",
   },
-   {
+  {
     name: "APIs and Web Scraping for AI Applications",
     institute: "Dataquest",
     link: "https://app.dataquest.io/verify_cert/0J0FCDKL2FJGJ6G6WLV0/",
@@ -272,12 +272,19 @@ const certificates: Certificate[] = [
     date: "Oct 2025",
     image: "/certificates/webscrap.png",
   },
-   {
+  {
     name: "Python Fundamentals for Web Development Program",
     institute: "Dataquest",
     link: "https://app.dataquest.io/verify_cert/3798S4SXYATL3T7FHN0N/",
     date: "Oct 2025",
     image: "/certificates/wdp.png",
+  },
+  {
+    name: "Tooling Essentials for Python Users",
+    institute: "Dataquest",
+    link: "https://app.dataquest.io/verify_cert/YA7J5TB25X19LD0XG3SK/",
+    date: "Oct 2025",
+    image: "/certificates/tooling.png",
   },
   {
     name: "Intermediate Python",
@@ -294,18 +301,11 @@ const certificates: Certificate[] = [
     image: "/certificates/hpAI.png",
   },
   {
-    name: "Agile Project Management",
-    institute: "HPLife",
-    link: "https://www.life-global.org/certificate/4ee8aafa-3693-404b-a44f-0acd144d46a6",
-    date: "Sep 2025",
-    image: "/certificates/agile.png",
-  },
-   {
-    name: "Tooling Essentials for Python Users",
+    name: "Introduction to Python Programming",
     institute: "Dataquest",
-    link: "https://app.dataquest.io/verify_cert/YA7J5TB25X19LD0XG3SK/",
-    date: "Oct 2025",
-    image: "/certificates/tooling.png",
+    link: "https://www.coursera.org/certificate/ml",
+    date: "Aug 2025",
+    image: "/certificates/intropy.png",
   },
   {
     name: "Introduction to Git and Version Control",
@@ -313,13 +313,6 @@ const certificates: Certificate[] = [
     link: "https://app.dataquest.io/view_cert/3FHFB5ZPEXYJSNU6TVI0",
     date: "Sep 2025",
     image: "/certificates/git.png",
-  },
-  {
-    name: "Fundamentals of Python and Generative AI",
-    institute: "Dataquest",
-    link: "https://app.dataquest.io/view_cert/Q2EA1L8EKVJYN3FHJ7H6",
-    date: "Sep 2025",
-    image: "/certificates/fundamentals.png",
   },
   {
     name: "SEO",
@@ -336,18 +329,18 @@ const certificates: Certificate[] = [
     image: "/certificates/teach.png",
   },
   {
+    name: "Agile Project Management",
+    institute: "HPLife",
+    link: "https://www.life-global.org/certificate/4ee8aafa-3693-404b-a44f-0acd144d46a6",
+    date: "Sep 2025",
+    image: "/certificates/agile.png",
+  },
+  {
     name: "AI Chatbots",
     institute: "Dataquest",
     link: "https://www.coursera.org/certificate/ml",
     date: "Aug 2025",
     image: "/certificates/chandra.png",
-  },
-  {
-    name: "Introduction to Python Programming",
-    institute: "Dataquest",
-    link: "https://www.coursera.org/certificate/ml",
-    date: "Aug 2025",
-    image: "/certificates/intropy.png",
   },
   {
     name: "AI Fundamentals",
@@ -357,11 +350,11 @@ const certificates: Certificate[] = [
     image: "/certificates/aifundamentals.png",
   },
   {
-    name: "IOA Membership Certificate",
-    institute: "Institute of Analytics",
-    link: "",
-    date: "Jun 2025",
-    image: "/certificates/IOA.png",
+    name: "Data Literacy",
+    institute: "Data Camp",
+    link: "https://www.datacamp.com/skill-verification/DL0033501861677",
+    date: "Oct 2025",
+    image: "/certificates/dl.png",
   },
   {
     name: "Google Sheets",
@@ -370,7 +363,15 @@ const certificates: Certificate[] = [
     date: "Nov 2024",
     image: "/certificates/google.png",
   },
+  {
+    name: "IOA Membership Certificate",
+    institute: "Institute of Analytics",
+    link: "",
+    date: "Jun 2025",
+    image: "/certificates/IOA.png",
+  },
 ];
+
 
 const Certifications: React.FC = () => {
   const [modalIndex, setModalIndex] = useState<number | null>(null);
