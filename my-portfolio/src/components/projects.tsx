@@ -84,7 +84,7 @@ const Project: React.FC = () => {
       >
         A collection of projects highlighting my journey in software development and innovation.
       </motion.p>
-<div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-6xl mx-auto">
+<div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3=8xl mx-auto">
   {projects.map((proj, index) => (
     <motion.div
       key={index}
@@ -106,7 +106,7 @@ const Project: React.FC = () => {
           {proj.name}
         </h2>
         <p
-          className="text-gray-600 mt-1 text-sm"
+          className="text-gray-600 mt-1 text-sm text-justify"
           style={{ fontFamily: "Poltawski Nowy, serif" }}
         >
           {proj.desc}
