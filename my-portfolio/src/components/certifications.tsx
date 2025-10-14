@@ -251,6 +251,27 @@ const certificates: Certificate[] = [
     date: "Sep 2025",
     image: "/certificates/microsoftAI.png",
   },
+  {
+    name: "Intermediate Python and APIs",
+    institute: "Dataquest",
+    link: "https://app.dataquest.io/verify_cert/1YXSX8MP9AYPT6AKCP1F/",
+    date: "Oct 2025",
+    image: "/certificates/inpyapi.png",
+  },
+   {
+    name: "APIs and Web Scraping for AI Applications",
+    institute: "Dataquest",
+    link: "https://app.dataquest.io/verify_cert/0J0FCDKL2FJGJ6G6WLV0/",
+    date: "Oct 2025",
+    image: "/certificates/webscrapai.png",
+  },
+  {
+    name: "APIs and Web Scraping in Python",
+    institute: "Dataquest",
+    link: "https://app.dataquest.io/verify_cert/DYNI8UCZWF9STT8TYQRZ/",
+    date: "Oct 2025",
+    image: "/certificates/webscrap.png",
+  },
    {
     name: "Python Fundamentals for Web Development Program",
     institute: "Dataquest",
