@@ -38,6 +38,13 @@ const projects: project[] = [
     website:"https://prajwolkhadka.com.np",
     image: "/projects/port.png",
   },
+  {
+    name: "VR Chemistry Lab Simulation Quiz Dashboard",
+    desc: "A comprehensive dashboard for a VR Chemistry Lab simulation that tracks and visualizes student quiz performance. Built with a focus on clarity and usability, it allows educators to monitor pass/fail ratios, gender-wise performance, and commonly missed questions. The dashboard is designed for seamless data interpretation, supporting better insights into student learning outcomes.",
+    link: "https://github.com/PrajwolKhadka/Vr-Chemistry-lab-dashboard",
+    website:"",
+    image: "/projects/dash.png",
+  },
      {
     name: "ByayamSetu: Fitness Companion UI/UX",
     desc: "A mobile fitness companion app concept focused on enhancing workout consistency and user engagement. Designed as part of a UI/UX project, it features intuitive navigation, personalized workout insights, and a clean, minimal interface optimized for daily usability. The design was created using Figma, emphasizing accessibility and visual balance.",
