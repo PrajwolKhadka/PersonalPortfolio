@@ -17,6 +17,29 @@ const projects: project[] = [
     website:"",
     image: "/projects/xvr.png",
   },
+  {
+    name: "AI Powered Adaptive Quiz System",
+    desc: "An intelligent quiz platform that adapts to each user’s performance and provides personalized feedback using AI. The system dynamically adjusts question difficulty based on previous responses, enhancing learning efficiency. It also includes features like quiz creation, real-time scoring, and AI-generated explanations for incorrect answers.",
+    link: "https://github.com/PrajwolKhadka/AI-powered-adaptive-quiz-system",
+    website:"",
+    image: "/projects/Apply21.png",
+  },
+  {
+    name: "Tenant Rent Reminder System",
+    desc: "A web-based application designed to help landlords and property managers automatically remind tenants about upcoming rent payments, maintenance schedules, and lease renewals. The system ensures timely notifications through Whatsapp, reducing manual follow-ups and missed payments.",
+    link: "https://github.com/PrajwolKhadka/TenantRentReminderSystem",
+    website:"",
+    image: "/projects/apply22.png",
+  },  
+  
+   {
+    name: "Basic AI Chatbot",
+    desc: "An intelligent chatbot designed to interact with users in natural language and provide personalized responses. It uses AI and NLP techniques to understand user queries, assist with common tasks, and deliver context-aware answers.",
+    link: "https://github.com/PrajwolKhadka/AI_Chatbot",
+    website:"",
+    image: "/projects/apply23.png",
+  },
+ 
     {
   name: "KaryaYojana: Online Job Portal",
   desc: "A full-stack web platform designed to connect Employers and Job Seekers through three interconnected portals — Job Seeker, Employer, and Admin. It includes scalable features such as a CV Builder and the ability to send CVs directly to employers via email. Built using React, Node.js, Express.js, and PostgreSQL.",
