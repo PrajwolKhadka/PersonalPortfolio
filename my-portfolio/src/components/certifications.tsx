@@ -213,15 +213,6 @@ const certificates: Certificate[] = [
 const Certifications: React.FC = () => {
   const [modalIndex, setModalIndex] = useState<number | null>(null);
 
-  const scroll = (direction: "left" | "right") => {
-    const container = document.getElementById("cert-container");
-    if (container) {
-      const card = container.querySelector("div");
-      if (!card) return;
-      const cardWidth = (card as HTMLElement).offsetWidth + 24;
-      container.scrollBy({ left: direction === "left" ? -cardWidth : cardWidth, behavior: "smooth" });
-    }
-  };
 
   const openModal = (index: number) => setModalIndex(index);
   const closeModal = () => setModalIndex(null);
@@ -247,80 +238,59 @@ const Certifications: React.FC = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: "easeInOut" }}
     >
-      <div className="px-6 sm:px-10 py-8 sm:py-12 text-center sm:text-left">
-        <h1
-          className="text-white font-bold text-3xl sm:text-4xl mb-2"
-          style={{ fontFamily: "Poltawski Nowy, serif" }}
-        >
-          Proof of Learning
-        </h1>
-        <p
-          className="text-gray-300 text-sm sm:text-base"
-          style={{ fontFamily: "Merriweather, serif" }}
-        >
-          Every certificate tells a story of dedication and growth.
-        </p>
-      </div>
+   <div className="px-6 sm:px-10 py-8 sm:py-12 text-center sm:text-left">
+  <h1
+    className="text-white font-bold text-3xl sm:text-4xl mb-2"
+    style={{ fontFamily: "Poltawski Nowy, serif" }}
+  >
+    Proof of Learning
+  </h1>
+  <p
+    className="text-gray-300 text-sm sm:text-base"
+    style={{ fontFamily: "Merriweather, serif" }}
+  >
+    Every certificate tells a story of dedication and growth.
+  </p>
+</div>
 
-      {/* Carousel */}
-      <div className="relative w-full py-8 px-4 sm:px-6 lg:px-10">
-        {/* Arrows */}
-        <button
-          onClick={() => scroll("left")}
-          className="absolute left-0 top-40 -translate-y-1/2 z-10 p-2 sm:p-3 bg-gray-800 text-white rounded-full hover:bg-gray-700"
+<div className="px-4 sm:px-6 lg:px-10 py-8 grid gap-6 sm:gap-8 md:grid-cols-1 lg:grid-cols-3 xl:grid-cols-3">
+  {certificates.map((cert, idx) => (
+    <div
+      key={idx}
+      className="bg-gray-900 text-white rounded-xl p-4 flex flex-col items-center transition-transform hover:scale-105 cursor-pointer"
+      onClick={() => openModal(idx)}
+    >
+      <img
+        src={cert.image}
+        alt={cert.name}
+        className="w-full h-36 sm:h-40 lg:h-44 object-contain rounded-md mb-4"
+      />
+      <h3
+        className="text-base sm:text-lg font-semibold text-center break-words"
+        style={{ fontFamily: "Merriweather, serif" }}
+      >
+        {cert.name}
+      </h3>
+      <p
+        className="text-xs sm:text-sm text-gray-400"
+        style={{ fontFamily: "'Doto', sans-serif" }}
+      >
+        {cert.institute}
+      </p>
+      {cert.link && (
+        <a
+          href={cert.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-blue-400 text-xs sm:text-sm underline mt-1"
         >
-          <FaChevronLeft />
-        </button>
-        <button
-          onClick={() => scroll("right")}
-          className="absolute right-0 top-40 -translate-y-1/2 z-10 p-2 sm:p-3 bg-gray-800 text-white rounded-full hover:bg-gray-700"
-        >
-          <FaChevronRight />
-        </button>
-
-        {/* Certificates */}
-        <div
-          id="cert-container"
-          className="flex gap-4 sm:gap-6 overflow-x-auto scroll-smooth snap-x snap-mandatory hide-scrollbar px-2"
-        >
-          {certificates.map((cert, idx) => (
-            <div
-              key={idx}
-              className="min-w-[220px] sm:min-w-[250px] lg:min-w-[280px] bg-gray-900 text-white rounded-xl p-4 flex flex-col items-center snap-start transition-transform hover:scale-105"
-            >
-              <img
-                src={cert.image}
-                alt={cert.name}
-                className="w-full h-36 sm:h-40 lg:h-44 object-contain rounded-md mb-4 cursor-pointer"
-                onClick={() => openModal(idx)}
-              />
-              <h3
-                className="text-base sm:text-lg font-semibold text-center break-words max-w-[220px]"
-                style={{ fontFamily: "Merriweather, serif" }}
-              >
-                {cert.name}
-              </h3>
-              <p
-                className="text-xs sm:text-sm text-gray-400"
-                style={{ fontFamily: "'Doto', sans-serif" }}
-              >
-                {cert.institute}
-              </p>
-              {cert.link && (
-                <a
-                  href={cert.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-400 text-xs sm:text-sm underline mt-1"
-                >
-                  Credential
-                </a>
-              )}
-              <p className="text-xs sm:text-sm text-gray-500 mt-1">{cert.date}</p>
-            </div>
-          ))}
-        </div>
-      </div>
+          Credential
+        </a>
+      )}
+      <p className="text-xs sm:text-sm text-gray-500 mt-1">{cert.date}</p>
+    </div>
+  ))}
+</div>
 
       {/* Modal */}
       {modalIndex !== null && (
