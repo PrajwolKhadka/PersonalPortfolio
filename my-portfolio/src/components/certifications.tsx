@@ -40,6 +40,20 @@ const certificates: Certificate[] = [
     image: "/certificates/fundamentals.png",
   },
   {
+    name: "Governance and Professionalism",
+    institute: "IOA",
+    link: "",
+    date: "Nov 2025",
+    image: "/certificates/governance.png",
+  },
+  {
+    name: "Communication",
+    institute: "IOA",
+    link: "",
+    date: "Nov 2025",
+    image: "/certificates/communication.png",
+  },
+  {
     name: "Advancing the Digital Economy for Sustainable Growth in Asia",
     institute: "ADBInstitute",
     link: "https://elearning-adbi.org/certificate-verifier/?code=140740-176-111-9367",
@@ -59,6 +73,13 @@ const certificates: Certificate[] = [
     link: "https://app.dataquest.io/verify_cert/0J0FCDKL2FJGJ6G6WLV0/",
     date: "Oct 2025",
     image: "/certificates/webscrapai.png",
+  },
+   {
+    name: "Understanding Augmented and Virtual Reality: An Introduction",
+    institute: "Linkedin Learning",
+    link: "https://www.linkedin.com/learning/certificates/2ad17926d15db56615795ab1273f9b0ae8c50afda304faaa6b7680eca2bfe445?u=2039756",
+    date: "Nov 2025",
+    image: "/certificates/image.png",
   },
   {
     name: "AI Aware Certificate",

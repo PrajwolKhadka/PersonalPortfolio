@@ -31,7 +31,13 @@ const projects: project[] = [
     website:"",
     image: "/projects/apply22.png",
   },  
-  
+  {
+    name: "DataWave Music: Customer Engagement & Churn Analysis",
+    desc: "A comprehensive data analysis project examining customer churn patterns and retention strategies for DataWave Music, a streaming platform serving global markets.",
+    link: "https://github.com/PrajwolKhadka/DataSprint",
+    website:"",
+    image: "/projects/datawave.png",
+  }, 
    {
     name: "Basic AI Chatbot",
     desc: "An intelligent chatbot designed to interact with users in natural language and provide personalized responses. It uses AI and NLP techniques to understand user queries, assist with common tasks, and deliver context-aware answers.",
