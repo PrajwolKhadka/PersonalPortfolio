@@ -9,6 +9,8 @@ const Certifications = lazy(() => import("./certifications.tsx"));
 const Media = lazy(() => import("./media.tsx"));
 const Project = lazy(() => import("./projects.tsx"));
 const Blog = lazy(() => import("./blogs.tsx"));
+import Chatbot from "../components/chatbot.tsx";
+
 const Parent: React.FC= () =>{
     const location= useLocation();
     return(
@@ -26,6 +28,7 @@ const Parent: React.FC= () =>{
           </Routes>
         </Suspense>
       </AnimatePresence>
+      <Chatbot/>
     </>
     );
 }

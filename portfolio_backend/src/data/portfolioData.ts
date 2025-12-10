@@ -12,5 +12,8 @@ export const portfolioData = {
     projects: [
         "VR Based Chemistry Lab Simulation", "AI Powered Adaptive Quiz System", "Tenant Rent Reminder System", "DataWave Music Customer Engagement & Churn Analysis",
         "Basic AI Chatbot", "Personal Portfolio with Chatbot", "Online Job Portal", 
+    ],
+    blogs: [
+        "Education, Fear, and Technology - A comprehensive report on how they relate." 
     ]
 };
