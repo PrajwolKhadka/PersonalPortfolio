@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon src/index.ts",
+    "start": "nodemon src/index.ts"
   },
   "keywords": [],
   "author": "",
@@ -13,9 +15,11 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^5.2.1",
-    "fuse.js": "^7.1.0"
+    "fuse.js": "^7.1.0",
+    "nodemon": "^3.1.11"
   },
   "devDependencies": {
+    "@types/cors": "^2.8.19",
     "@types/express": "^5.0.6",
     "@types/node": "^24.10.1",
     "ts-node": "^10.9.2",
