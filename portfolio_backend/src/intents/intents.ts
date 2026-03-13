@@ -68,7 +68,7 @@ export const intents: Intent[] = [
             "portfolio projects", "your projects", "project list",
             "project showcase", "projcts"
         ],
-        response: () => `My projects include: ${portfolioData.projects}. More in the project section of the portfolio 😊`,
+        response: () => `My projects include: ${portfolioData.projects.map(p=> `${p.name} (${p.desc})`).join("\n")}. More in the project section of the portfolio 😊`,
     },
     {
         name: "blogs",
