@@ -1,12 +1,10 @@
-// src/config/constants.ts
-
 import dotenv from 'dotenv';
 
 // Load environment variables
 dotenv.config();
 
 // API Keys
-export const API_KEY = process.env.API_KEY || '';
+export const API_KEY = process.env.GEMINI_API || '';
 
 // Model Configuration
 export const LLM_MODEL_NAME = process.env.LLM_MODEL_NAME || 'meta-llama/llama-3.2-3b-instruct:free';

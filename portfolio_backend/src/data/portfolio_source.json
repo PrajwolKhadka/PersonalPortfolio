@@ -1,0 +1,284 @@
+[
+  {
+    "id": 1,
+    "type": "personal_info",
+    "title": "Name",
+    "content": "Prajwol Khadka"
+  },
+  {
+    "id": 2,
+    "type": "personal_info",
+    "title": "Education",
+    "content": "BSc(Hons) in Computing from Softwarica College of IT & E-commerce"
+  },
+  {
+    "id": 3,
+    "type": "skill",
+    "title": "Skill",
+    "content": "Python"
+  },
+  {
+    "id": 4,
+    "type": "skill",
+    "title": "Skill",
+    "content": "VR"
+  },
+  {
+    "id": 5,
+    "type": "skill",
+    "title": "Skill",
+    "content": "Web Development"
+  },
+  {
+    "id": 6,
+    "type": "skill",
+    "title": "Skill",
+    "content": "Data Analysis"
+  },
+  {
+    "id": 7,
+    "type": "certificate",
+    "title": "Career Essentials in Generative AI by Microsoft and Linkedin",
+    "content": "Institute: Microsoft"
+  },
+  {
+    "id": 8,
+    "type": "certificate",
+    "title": "Career Essentials in Software Development by Microsoft and Linkedin",
+    "content": "Institute: Microsoft"
+  },
+  {
+    "id": 9,
+    "type": "certificate",
+    "title": "Generative AI Fundamentals in Python Path",
+    "content": "Institute: Dataquest"
+  },
+  {
+    "id": 10,
+    "type": "certificate",
+    "title": "Fundamentals of Python and Generative AI",
+    "content": "Institute: Dataquest"
+  },
+  {
+    "id": 11,
+    "type": "certificate",
+    "title": "Governance and Professionalism",
+    "content": "Institute: IOA"
+  },
+  {
+    "id": 12,
+    "type": "certificate",
+    "title": "Communication",
+    "content": "Institute: IOA"
+  },
+  {
+    "id": 13,
+    "type": "certificate",
+    "title": "Advancing the Digital Economy for Sustainable Growth in Asia",
+    "content": "Institute: ADBInstitute"
+  },
+  {
+    "id": 14,
+    "type": "certificate",
+    "title": "Intermediate Python and APIs",
+    "content": "Institute: Dataquest"
+  },
+  {
+    "id": 15,
+    "type": "certificate",
+    "title": "APIs and Web Scraping for AI Applications",
+    "content": "Institute: Dataquest"
+  },
+  {
+    "id": 16,
+    "type": "certificate",
+    "title": "Understanding Augmented and Virtual Reality: An Introduction",
+    "content": "Institute: Linkedin Learning"
+  },
+  {
+    "id": 17,
+    "type": "certificate",
+    "title": "AI Aware Certificate",
+    "content": "Institute: Intel"
+  },
+  {
+    "id": 18,
+    "type": "certificate",
+    "title": "AI Appreciate Certificate",
+    "content": "Institute: Intel"
+  },
+  {
+    "id": 19,
+    "type": "certificate",
+    "title": "Python Fundamentals for Web Development Program",
+    "content": "Institute: Dataquest"
+  },
+  {
+    "id": 20,
+    "type": "certificate",
+    "title": "Python Fundamentals for Web Development Program",
+    "content": "Institute: Dataquest"
+  },
+  {
+    "id": 21,
+    "type": "certificate",
+    "title": "Python Fundamentals for Web Development Program",
+    "content": "Institute: Dataquest"
+  },
+  {
+    "id": 22,
+    "type": "certificate",
+    "title": "Tooling Essentials for Python Users",
+    "content": "Institute: Dataquest"
+  },
+  {
+    "id": 23,
+    "type": "certificate",
+    "title": "Intermediate Python",
+    "content": "Institute: Dataquest"
+  },
+  {
+    "id": 24,
+    "type": "certificate",
+    "title": "AI for Beginners",
+    "content": "Institute: HPLife"
+  },
+  {
+    "id": 25,
+    "type": "certificate",
+    "title": "Introduction to Python Programming",
+    "content": "Institute: Dataquest"
+  },
+  {
+    "id": 26,
+    "type": "certificate",
+    "title": "Introduction to Git and Version Control",
+    "content": "Institute: Dataquest"
+  },
+  {
+    "id": 27,
+    "type": "certificate",
+    "title": "SEO",
+    "content": "Institute: HubSpot Academy"
+  },
+  {
+    "id": 28,
+    "type": "certificate",
+    "title": "The Digital Teacher",
+    "content": "Institute: UNESCO MGIEP"
+  },
+  {
+    "id": 29,
+    "type": "certificate",
+    "title": "Agile Project Management",
+    "content": "Institute: HPLife"
+  },
+  {
+    "id": 30,
+    "type": "certificate",
+    "title": "AI Chatbots",
+    "content": "Institute: Dataquest"
+  },
+  {
+    "id": 31,
+    "type": "certificate",
+    "title": "AI Fundamentals",
+    "content": "Institute: Data Camp"
+  },
+  {
+    "id": 32,
+    "type": "certificate",
+    "title": "Data Literacy",
+    "content": "Institute: Data Camp"
+  },
+  {
+    "id": 33,
+    "type": "certificate",
+    "title": "Google Sheets",
+    "content": "Institute: Google Cloud"
+  },
+  {
+    "id": 34,
+    "type": "certificate",
+    "title": "IOA Membership Certificate",
+    "content": "Institute: Institute of Analytics"
+  },
+  {
+    "id": 35,
+    "type": "project",
+    "title": "XVRments: VR-based Chemistry Lab Simulation",
+    "content": "Experience chemistry like never before with an immersive learning experience made prioritizing safe and feasible learning experience with four different experiments, summarization, and a Quiz to evaluate learning outcomes. Made using Unity Engine, Scripted using C# and Backend using Django and PostgresSQL."
+  },
+  {
+    "id": 36,
+    "type": "project",
+    "title": "AI Powered Adaptive Quiz System",
+    "content": "An intelligent quiz platform that adapts to each user's performance and provides personalized feedback using AI. The system dynamically adjusts question difficulty based on previous responses, enhancing learning efficiency. It also includes features like quiz creation, real-time scoring, and AI-generated explanations for incorrect answers."
+  },
+  {
+    "id": 37,
+    "type": "project",
+    "title": "Tenant Rent Reminder System",
+    "content": "A web-based application designed to help landlords and property managers automatically remind tenants about upcoming rent payments, maintenance schedules, and lease renewals. The system ensures timely notifications through Whatsapp, reducing manual follow-ups and missed payments."
+  },
+  {
+    "id": 38,
+    "type": "project",
+    "title": "DataWave Music: Customer Engagement & Churn Analysis",
+    "content": "A comprehensive data analysis project examining customer churn patterns and retention strategies for DataWave Music, a streaming platform serving global markets."
+  },
+  {
+    "id": 39,
+    "type": "project",
+    "title": "Basic AI Chatbot",
+    "content": "An intelligent chatbot designed to interact with users in natural language and provide personalized responses. It uses AI and NLP techniques to understand user queries, assist with common tasks, and deliver context-aware answers."
+  },
+  {
+    "id": 40,
+    "type": "project",
+    "title": "KaryaYojana: Online Job Portal",
+    "content": "A full-stack web platform designed to connect Employers and Job Seekers through three interconnected portals — Job Seeker, Employer, and Admin. It includes scalable features such as a CV Builder and the ability to send CVs directly to employers via email. Built using React, Node.js, Express.js, and PostgreSQL."
+  },
+  {
+    "id": 41,
+    "type": "project",
+    "title": "ByayamKendra: Online Workout Suggestion Platform",
+    "content": "A fitness-focused web application designed to generate personalized workout plans and track user progress. The app suggests exercises based on user data such as height, weight, age, and gender, and integrates a Nepali diet plan for localized fitness guidance. Built using React, Node.js, Express.js, and PostgreSQL."
+  },
+  {
+    "id": 42,
+    "type": "project",
+    "title": "Personal Portfolio",
+    "content": "A responsive personal portfolio website built to showcase projects, certifications, and professional achievements. Designed with a modern UI using React and Tailwind CSS, featuring smooth animations with Framer Motion and deployed on a custom domain using Netlify. The site highlights academic and technical accomplishments through a structured, minimal design."
+  },
+  {
+    "id": 43,
+    "type": "project",
+    "title": "VR Chemistry Lab Simulation Quiz Dashboard",
+    "content": "A comprehensive dashboard for a VR Chemistry Lab simulation that tracks and visualizes student quiz performance. Built with a focus on clarity and usability, it allows educators to monitor pass/fail ratios, gender-wise performance, and commonly missed questions. The dashboard is designed for seamless data interpretation, supporting better insights into student learning outcomes."
+  },
+  {
+    "id": 44,
+    "type": "project",
+    "title": "ByayamSetu: Fitness Companion UI/UX",
+    "content": "A mobile fitness companion app concept focused on enhancing workout consistency and user engagement. Designed as part of a UI/UX project, it features intuitive navigation, personalized workout insights, and a clean, minimal interface optimized for daily usability. The design was created using Figma, emphasizing accessibility and visual balance."
+  },
+  {
+    "id": 45,
+    "type": "project",
+    "title": "CarSubhida: Car Rental System",
+    "content": "A basic Java-based desktop application made during my first year for managing car rentals, designed to handle bookings, vehicle inventory, and customer data efficiently. Built as an academic project, it demonstrates object-oriented programming principles, modular design, and basic CRUD operations to simulate a real-world car rental workflow."
+  },
+  {
+    "id": 46,
+    "type": "project",
+    "title": "KataGarne?: Event Booking System",
+    "content": "A simple Python-based desktop application designed to manage event bookings. Built as an early-semester academic project, it demonstrates foundational programming skills, basic CRUD operations, and user interface design using Python."
+  },
+  {
+    "id": 47,
+    "type": "blog",
+    "title": "Blog Post",
+    "content": "Education, Fear, and Technology - A comprehensive report on how they relate."
+  }
+]

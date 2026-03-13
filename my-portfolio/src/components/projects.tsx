@@ -13,7 +13,7 @@ const projects: project[] = [
   {
     name: "XVRments: VR-based Chemistry Lab Simulation",
     desc: "Experience chemistry like never before with an immersive learning experience made prioritizing safe and feasible learning experience with four different experiments, summarization, and a Quiz to evaluate learning outcomes. Made using Unity Engine, Scripted using C# and Backend using Django and PostgresSQL.",
-    link: "https://www.youtube.com/embed/Jx3FyqrfnKo",
+    link: "https://www.youtube.com/watch?v=Jx3FyqrfnKo",
     website:"",
     image: "/projects/xvr.png",
   },
@@ -21,6 +21,13 @@ const projects: project[] = [
     name: "AI Powered Adaptive Quiz System",
     desc: "An intelligent quiz platform that adapts to each user’s performance and provides personalized feedback using AI. The system dynamically adjusts question difficulty based on previous responses, enhancing learning efficiency. It also includes features like quiz creation, real-time scoring, and AI-generated explanations for incorrect answers.",
     link: "https://github.com/PrajwolKhadka/AI-powered-adaptive-quiz-system",
+    website:"",
+    image: "/projects/Apply21.png",
+  },
+   {
+    name: "AI Powered Adaptive Quiz System -Android",
+    desc: "An intelligent quiz platform that adapts to each user’s performance and provides personalized feedback using AI. The system dynamically adjusts question difficulty based on previous responses, enhancing learning efficiency. It also includes features like quiz creation, real-time scoring, and AI-generated explanations for incorrect answers.",
+    link: "https://github.com/PrajwolKhadka/adaptive_quiz",
     website:"",
     image: "/projects/Apply21.png",
   },

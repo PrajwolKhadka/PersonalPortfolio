@@ -1,6 +1,6 @@
 import React from "react";
 import myPhoto from "../assets/profile.png";
-
+import Chatbot from "../components/chatbot.tsx";
 const Home: React.FC = () => {
   return (
     <section className="flex  items-center justify-center gap-12 xl:gap-16 px-6 md:px-16 lg:px-24 xl:px-32 py-12 md:py-10 overflow-hidden md:min-h-[85vh]">
@@ -35,6 +35,7 @@ const Home: React.FC = () => {
           />
         </div>
       </div>
+      <Chatbot/>
     </section>
   );
 };

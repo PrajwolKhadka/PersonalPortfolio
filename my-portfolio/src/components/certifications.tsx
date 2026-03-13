@@ -11,6 +11,13 @@ interface Certificate {
 }
 
 const certificates: Certificate[] = [
+    {
+    name: "IOA Student Analytics Challenge Winning Certificate 2025",
+    institute: "IOA",
+    link: "",
+    date: "Dec 2025",
+    image: "/certificates/IOAWINNER.png",
+  },
   {
     name: "Career Essentials in Generative AI by Microsoft and Linkedin",
     institute: "Microsoft",

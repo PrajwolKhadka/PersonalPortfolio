@@ -13,6 +13,20 @@ interface MediaItem {
 }
 
 const media: MediaItem[] = [
+   {
+    title: "From Classroom to Career: Voices from the IoA Student Sprint 2026",
+    type: "video",
+    url: "https://www.youtube.com/embed/wNceYTka12Y?start=0",
+    thumbnail: "/media/maxresdefault.jpg",
+    date: "Fev 2026",
+  },
+   {
+    title: "From Assignment to Innovation : VR Chemistry Lab Changing Classroomss",
+    type: "video",
+    url: "https://www.youtube.com/embed/NNokAFDUAvU?start=0",
+    thumbnail: "/media/ictcover.jpg",
+    date: "Sep 2025",
+  },
   {
     title: "From Assignment to Innovation : VR Chemistry Lab Changing Classroomss",
     type: "video",
