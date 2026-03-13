@@ -280,5 +280,17 @@
     "type": "blog",
     "title": "Blog Post",
     "content": "Education, Fear, and Technology - A comprehensive report on how they relate."
-  }
+  },
+  {
+    "id": 48,
+    "type": "contact",
+    "title": "Email",
+    "content": "prazolkhadka67@gmail.com"
+  },
+   {
+    "id": 49,
+    "type": "contact",
+    "title": "Email",
+    "content": "Link in the About section"
+  },
 ]
