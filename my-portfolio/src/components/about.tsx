@@ -1,8 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
 import myPhoto from "../assets/profile.png";
-import linkedin from "../assets/linkedin.png"
-import github from "../assets/github.png"
+import linkedin from "../assets/linkedin.png";
+import github from "../assets/github.png";
+import Chatbot from "../components/chatbot.tsx";
 const About: React.FC = () => {
   return (
     <motion.section
@@ -94,7 +95,7 @@ const About: React.FC = () => {
 
         </motion.div>
       </div>
-      
+      <Chatbot/>
     </motion.section>
   );
 };

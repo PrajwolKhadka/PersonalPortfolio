@@ -28,7 +28,7 @@ const Parent: React.FC= () =>{
           </Routes>
         </Suspense>
       </AnimatePresence>
-      <Chatbot/>
+      {/* <Chatbot/> */}
     </>
     );
 }
