@@ -28,13 +28,6 @@ const media: MediaItem[] = [
     date: "Sep 2025",
   },
   {
-    title: "From Assignment to Innovation : VR Chemistry Lab Changing Classroomss",
-    type: "video",
-    url: "https://www.youtube.com/embed/NNokAFDUAvU?start=0",
-    thumbnail: "/media/ictcover.jpg",
-    date: "Sep 2025",
-  },
-  {
     title: "Tech-X 3.0: Innovation Showcase at Softwarica College",
     type: "video",
     url: "https://www.youtube.com/embed/4j9Qdg2VwWs?start=162",

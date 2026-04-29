@@ -24,6 +24,20 @@ const projects: project[] = [
     website:"",
     image: "/projects/Apply21.png",
   },
+    {
+    name: "Global Superstore Sales Analysis",
+    desc: "An interactive Power BI dashboard analyzing $3.9M in global retail sales across 8,031 orders, built to surface profitability trends, regional performance, and product-level insights. Applied data cleaning, DAX calculations, and exploratory analysis to transform raw transactional data into actionable insights, with a focus on storytelling through interactive business intelligence.",
+    link: "https://github.com/PrajwolKhadka/Global-Sales-Analysis",
+    website:"",
+    image: "/projects/image.png",
+  },
+  {
+    name: "DataWave Music: Customer Engagement & Churn Analysis",
+    desc: "An IOA Datasprint winning project. A comprehensive data analysis project examining customer churn patterns and retention strategies for DataWave Music, a streaming platform serving global markets.",
+    link: "https://github.com/PrajwolKhadka/DataSprint",
+    website:"https://www.instagram.com/p/DVqLa0Dk2-M/",
+    image: "/projects/datawave.png",
+  }, 
    {
     name: "AI Powered Adaptive Quiz System -Android",
     desc: "An intelligent quiz platform that adapts to each user’s performance and provides personalized feedback using AI. The system dynamically adjusts question difficulty based on previous responses, enhancing learning efficiency. It also includes features like quiz creation, real-time scoring, and AI-generated explanations for incorrect answers.",
@@ -31,6 +45,13 @@ const projects: project[] = [
     website:"",
     image: "/projects/Apply21.png",
   },
+    {
+    name: "Bajagaja: Web-Based Virtual Instrument Player ",
+    desc: "Interactive browser-based application for playing traditional and modern instruments virtually,showcasing web development and audio engineering skills. Built using Next.js for the frontend, Node.js and Express.js for the backend, and integrated with Web Audio API to create a responsive and immersive musical experience. The platform allows users to play various instruments using their keyboard or touch input, making music creation accessible to everyone.",
+    link: "https://github.com/PrajwolKhadka/bajagaja",
+    website:"https://bajagaja.vercel.app",
+    image: "/projects/bajagaja.png",
+  }, 
   {
     name: "Tenant Rent Reminder System",
     desc: "A web-based application designed to help landlords and property managers automatically remind tenants about upcoming rent payments, maintenance schedules, and lease renewals. The system ensures timely notifications through Whatsapp, reducing manual follow-ups and missed payments.",
@@ -38,13 +59,6 @@ const projects: project[] = [
     website:"",
     image: "/projects/apply22.png",
   },  
-  {
-    name: "DataWave Music: Customer Engagement & Churn Analysis",
-    desc: "A comprehensive data analysis project examining customer churn patterns and retention strategies for DataWave Music, a streaming platform serving global markets.",
-    link: "https://github.com/PrajwolKhadka/DataSprint",
-    website:"",
-    image: "/projects/datawave.png",
-  }, 
    {
     name: "Basic AI Chatbot",
     desc: "An intelligent chatbot designed to interact with users in natural language and provide personalized responses. It uses AI and NLP techniques to understand user queries, assist with common tasks, and deliver context-aware answers.",

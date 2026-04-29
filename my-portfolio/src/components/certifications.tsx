@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { FaChevronLeft, FaChevronRight, FaTimes } from "react-icons/fa";
 import { motion } from "framer-motion";
 
@@ -9,15 +9,15 @@ interface Certificate {
   date: string;
   image: string;
 }
+interface Highlights {
+  name: string;
+  institute: string;
+  link: string;
+  date: string;
+  image: string;
+}
 
 const certificates: Certificate[] = [
-    {
-    name: "IOA Student Analytics Challenge Winning Certificate 2025",
-    institute: "IOA",
-    link: "",
-    date: "Dec 2025",
-    image: "/certificates/IOAWINNER.png",
-  },
   {
     name: "Career Essentials in Generative AI by Microsoft and Linkedin",
     institute: "Microsoft",
@@ -38,7 +38,7 @@ const certificates: Certificate[] = [
     link: "https://app.dataquest.io/view_cert/82PR0UWJ1PIOZ1KN9CI1",
     date: "Oct 2025",
     image: "/certificates/genaipath.png",
-  }, 
+  },
   {
     name: "Fundamentals of Python and Generative AI",
     institute: "Dataquest",
@@ -81,7 +81,7 @@ const certificates: Certificate[] = [
     date: "Oct 2025",
     image: "/certificates/webscrapai.png",
   },
-   {
+  {
     name: "Understanding Augmented and Virtual Reality: An Introduction",
     institute: "Linkedin Learning",
     link: "https://www.linkedin.com/learning/certificates/2ad17926d15db56615795ab1273f9b0ae8c50afda304faaa6b7680eca2bfe445?u=2039756",
@@ -216,19 +216,57 @@ const certificates: Certificate[] = [
   },
 ];
 
+const highlights: Highlights[] = [
+  {
+    name: "Data Engineer",
+    institute: "Datacamp",
+    link: "https://www.datacamp.com/certificate/DE0016147656480",
+    date: "Mar 2026",
+    image: "/certificates/dataenginer.png",
+  },
+  {
+    name: "IOA Student Analytics Challenge Winning Certificate 2025",
+    institute: "IOA",
+    link: "https://www.instagram.com/p/DVqLa0Dk2-M/",
+    date: "Dec 2025",
+    image: "/certificates/IOAWINNER.png",
+  },
+   {
+    name: "micro1 certified IT Manager",
+    institute: "micro1.ai",
+    link: "",
+    date: "April 2026",
+    image: "/certificates/micro1.jpg",
+  },
+];
 
 const Certifications: React.FC = () => {
   const [modalIndex, setModalIndex] = useState<number | null>(null);
-
+  const [modalSection, setModalSection] = useState<
+    "highlights" | "certificates" | null
+  >(null);
 
   const openModal = (index: number) => setModalIndex(index);
   const closeModal = () => setModalIndex(null);
+  const openHighlightModal = (idx: number) => {
+    setModalSection("highlights");
+    setModalIndex(idx);
+  };
+  const openCertModal = (idx: number) => {
+    setModalSection("certificates");
+    setModalIndex(idx);
+  };
+  const modalData = modalSection === "highlights" ? highlights : certificates;
   const prevModal = () =>
-    setModalIndex((prev) => (prev !== null ? (prev === 0 ? certificates.length - 1 : prev - 1) : null));
+    setModalIndex((prev) =>
+      prev !== null ? (prev === 0 ? modalData.length - 1 : prev - 1) : null,
+    );
   const nextModal = () =>
-    setModalIndex((prev) => (prev !== null ? (prev === certificates.length - 1 ? 0 : prev + 1) : null));
+    setModalIndex((prev) =>
+      prev !== null ? (prev === modalData.length - 1 ? 0 : prev + 1) : null,
+    );
 
-   useEffect(() => {
+  useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (modalIndex !== null) {
         if (e.key === "ArrowLeft") prevModal();
@@ -245,59 +283,117 @@ const Certifications: React.FC = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: "easeInOut" }}
     >
-   <div className="px-6 sm:px-10 py-8 sm:py-12 text-center sm:text-left">
-  <h1
-    className="text-white font-bold text-3xl sm:text-4xl mb-2"
-    style={{ fontFamily: "Poltawski Nowy, serif" }}
-  >
-    Proof of Learning
-  </h1>
-  <p
-    className="text-gray-300 text-sm sm:text-base"
-    style={{ fontFamily: "Merriweather, serif" }}
-  >
-    Every certificate tells a story of dedication and growth.
-  </p>
-</div>
-
-<div className="px-4 sm:px-6 lg:px-10 py-8 grid gap-6 sm:gap-8 md:grid-cols-1 lg:grid-cols-3 xl:grid-cols-3">
-  {certificates.map((cert, idx) => (
-    <div
-      key={idx}
-      className="bg-gray-900 text-white rounded-xl p-4 flex flex-col items-center transition-transform hover:scale-105 cursor-pointer"
-      onClick={() => openModal(idx)}
-    >
-      <img
-        src={cert.image}
-        alt={cert.name}
-        className="w-full h-36 sm:h-40 lg:h-44 object-contain rounded-md mb-4"
-      />
-      <h3
-        className="text-base sm:text-lg font-semibold text-center break-words"
-        style={{ fontFamily: "Merriweather, serif" }}
-      >
-        {cert.name}
-      </h3>
-      <p
-        className="text-xs sm:text-sm text-gray-400"
-        style={{ fontFamily: "'Doto', sans-serif" }}
-      >
-        {cert.institute}
-      </p>
-      {cert.link && (
-        <a
-          href={cert.link}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-blue-400 text-xs sm:text-sm underline mt-1"
+      <div className="px-6 sm:px-10 py-8 sm:py-12 text-center sm:text-left">
+        <h1
+          className="text-white font-bold text-3xl sm:text-4xl mb-2"
+          style={{ fontFamily: "Poltawski Nowy, serif" }}
         >
-          Credential
-        </a>
-      )}
-      <p className="text-xs sm:text-sm text-gray-500 mt-1">{cert.date}</p>
-    </div>
-  ))}
-</div>
+          Proof of Learning
+        </h1>
+        <p
+          className="text-gray-300 text-sm sm:text-base"
+          style={{ fontFamily: "Merriweather, serif" }}
+        >
+          Every certificate tells a story of dedication and growth.
+        </p>
+      </div>
+
+      <div>
+        <h2
+          className="text-white font-bold text-2xl mb-4 px-6 sm:px-10"
+          style={{ fontFamily: "Poltawski Nowy, serif" }}
+        >
+          Highlights
+        </h2>
+        <div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
+          {highlights.map((cert, idx) => (
+            <div
+              key={idx}
+              className="bg-gray-900 text-white rounded-xl p-4 flex flex-col items-center transition-transform hover:scale-105 cursor-pointer"
+              onClick={() => openHighlightModal(idx)}
+            >
+              <img
+                src={cert.image}
+                alt={cert.name}
+                className="w-full h-36 sm:h-40 lg:h-44 object-contain rounded-md mb-4"
+              />
+              <h3
+                className="text-base sm:text-lg font-semibold text-center break-words"
+                style={{ fontFamily: "Merriweather, serif" }}
+              >
+                {cert.name}
+              </h3>
+              <p
+                className="text-xs sm:text-sm text-gray-400"
+                style={{ fontFamily: "'Doto', sans-serif" }}
+              >
+                {cert.institute}
+              </p>
+              {cert.link && (
+                <a
+                  href={cert.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-400 text-xs sm:text-sm underline mt-1"
+                >
+                  Credential
+                </a>
+              )}
+              <p className="text-xs sm:text-sm text-gray-500 mt-1">
+                {cert.date}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div>
+        <h2
+          className="text-white font-bold text-2xl mb-4 px-6 sm:px-10"
+          style={{ fontFamily: "Poltawski Nowy, serif" }}
+        >
+          All Certificates
+        </h2>
+        <div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
+          {certificates.map((cert, idx) => (
+            <div
+              key={idx}
+              className="bg-gray-900 text-white rounded-xl p-4 flex flex-col items-center transition-transform hover:scale-105 cursor-pointer"
+              onClick={() => openCertModal(idx)}
+            >
+              <img
+                src={cert.image}
+                alt={cert.name}
+                className="w-full h-36 sm:h-40 lg:h-44 object-contain rounded-md mb-4"
+              />
+              <h3
+                className="text-base sm:text-lg font-semibold text-center break-words"
+                style={{ fontFamily: "Merriweather, serif" }}
+              >
+                {cert.name}
+              </h3>
+              <p
+                className="text-xs sm:text-sm text-gray-400"
+                style={{ fontFamily: "'Doto', sans-serif" }}
+              >
+                {cert.institute}
+              </p>
+              {cert.link && (
+                <a
+                  href={cert.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-400 text-xs sm:text-sm underline mt-1"
+                >
+                  Credential
+                </a>
+              )}
+              <p className="text-xs sm:text-sm text-gray-500 mt-1">
+                {cert.date}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
 
       {/* Modal */}
       {modalIndex !== null && (
@@ -320,10 +416,15 @@ const Certifications: React.FC = () => {
           >
             <FaChevronRight />
           </button>
-          <h2 className="text-2xl flex font-bold text-white mb-4 pr-10" style={{ fontFamily: "Merriweather, serif" }} >{certificates[modalIndex].name}</h2>
+          <h2
+            className="text-2xl flex font-bold text-white mb-4 pr-10"
+            style={{ fontFamily: "Merriweather, serif" }}
+          >
+            {modalData[modalIndex].name}
+          </h2>
           <img
-            src={certificates[modalIndex].image}
-            alt={certificates[modalIndex].name}
+            src={modalData[modalIndex].image}
+            alt={modalData[modalIndex].name}
             className="max-h-[80vh] max-w-[90vw] sm:max-h-[85vh] sm:max-w-[85vw] object-contain rounded-lg shadow-lg"
           />
         </div>
