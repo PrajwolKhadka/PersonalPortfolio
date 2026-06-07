@@ -48,6 +48,11 @@ const media: MediaItem[] = [
     thumbnail: "/media/techpana.png",
     date: "Jul 2024",
   },
+     {
+    title: "AI-powered legal companion designed to support survivors of domestic violence in Nepal.",
+    type: "image",
+    thumbnail: "/media/hackathon.jpg",
+  },
    {
     title: "VR Chemistry Lab Demonstration at School",
     type: "image",
@@ -236,7 +241,7 @@ const Media: React.FC = () => {
       {videos.length > 0 && (
         <>
           <MediaCarousel 
-            title="YouTube Videos" 
+            title="Videos" 
             items={videos} 
             onItemClick={openModal} 
             startIndex={videoStartIndex}

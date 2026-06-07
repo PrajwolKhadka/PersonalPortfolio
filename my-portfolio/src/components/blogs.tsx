@@ -7,6 +7,7 @@ interface BlogPost {
     id: number;
     title: string;
     summary: string;
+    image: string;
     file: string;
 }
 
@@ -23,7 +24,15 @@ const blogPosts: BlogPost[] = [
     id: 1,
     title: "Education, Fear & Technology",
     summary: "A in-depth look at how education systems can adapt to technological advancements while addressing fears.",
+    image:"/thumbnails/image.png",
     file: "/blogs/EFT.pdf"
+    },
+    {
+    id: 2,
+    title: "Sahachari",
+    summary: "An intelligent legal companion for survivors of domestic violence in Nepal.",
+    image:"/thumbnails/sahachari.png",
+    file: "/blogs/sahachari.pdf"
     }
 ];
 
@@ -52,7 +61,7 @@ const Blog: React.FC=()=>{
             onClick={() => setSelectedPdf(pdf)}
           >
             <img
-              src={blogThumb.image}
+              src={pdf.image}
               alt="Blog thumbnail"
               className="w-40 h-40 object-cover rounded-lg shadow-lg"
             />

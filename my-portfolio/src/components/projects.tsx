@@ -39,6 +39,13 @@ const projects: project[] = [
     image: "/projects/datawave.png",
   }, 
    {
+    name: "DataForGood Nepal Hackathon: Sahachari a legal companion platform for domestic violence victims",
+    desc: "10 Hour hackathon winning project. An intelligent legal companion for survivors of domestic violence in Nepal",
+    link: "https://github.com/softwarica-college-class/softwarica-hackathon-2026-bsc-in-error",
+    website:"",
+    image: "/projects/sahachari.png",
+  }, 
+   {
     name: "AI Powered Adaptive Quiz System -Android",
     desc: "An intelligent quiz platform that adapts to each user’s performance and provides personalized feedback using AI. The system dynamically adjusts question difficulty based on previous responses, enhancing learning efficiency. It also includes features like quiz creation, real-time scoring, and AI-generated explanations for incorrect answers.",
     link: "https://github.com/PrajwolKhadka/adaptive_quiz",

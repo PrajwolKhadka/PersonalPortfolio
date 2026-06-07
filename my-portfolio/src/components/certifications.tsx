@@ -238,6 +238,13 @@ const highlights: Highlights[] = [
     date: "April 2026",
     image: "/certificates/micro1.jpg",
   },
+    {
+    name: "DataForGood Nepal 2026 Hackathon- Winner",
+    institute: "IOA x Softwarica",
+    link: "https://www.instagram.com/p/DZKlEtqEvbW/",
+    date: "June 2026",
+    image: "/certificates/hackathon.png",
+  },
 ];
 
 const Certifications: React.FC = () => {
