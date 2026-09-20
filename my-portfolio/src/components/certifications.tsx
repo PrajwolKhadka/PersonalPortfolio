@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { FaChevronLeft, FaChevronRight, FaTimes } from "react-icons/fa";
 import { motion } from "framer-motion";
 
@@ -231,14 +231,14 @@ const highlights: Highlights[] = [
     date: "Dec 2025",
     image: "/certificates/IOAWINNER.png",
   },
-   {
+  {
     name: "micro1 certified IT Manager",
     institute: "micro1.ai",
     link: "",
     date: "April 2026",
     image: "/certificates/micro1.jpg",
   },
-    {
+  {
     name: "DataForGood Nepal 2026 Hackathon- Winner",
     institute: "IOA x Softwarica",
     link: "https://www.instagram.com/p/DZKlEtqEvbW/",
@@ -247,13 +247,16 @@ const highlights: Highlights[] = [
   },
 ];
 
+const gridClasses =
+  "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 md:gap-8 px-6 sm:px-10";
+
 const Certifications: React.FC = () => {
   const [modalIndex, setModalIndex] = useState<number | null>(null);
   const [modalSection, setModalSection] = useState<
     "highlights" | "certificates" | null
   >(null);
+  const touchStartX = useRef<number | null>(null);
 
-  const openModal = (index: number) => setModalIndex(index);
   const closeModal = () => setModalIndex(null);
   const openHighlightModal = (idx: number) => {
     setModalSection("highlights");
@@ -283,12 +286,27 @@ const Certifications: React.FC = () => {
     };
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [modalIndex]);
+  }, [modalIndex, modalSection]);
+
+  // Swipe left/right inside the modal on touch screens
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartX.current === null) return;
+    const dx = e.changedTouches[0].clientX - touchStartX.current;
+    touchStartX.current = null;
+    if (Math.abs(dx) < 50) return;
+    if (dx > 0) prevModal();
+    else nextModal();
+  };
+
   return (
     <motion.section
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: "easeInOut" }}
+      className="pb-12"
     >
       <div className="px-6 sm:px-10 py-8 sm:py-12 text-center sm:text-left">
         <h1
@@ -305,14 +323,14 @@ const Certifications: React.FC = () => {
         </p>
       </div>
 
-      <div>
+      <div className="mb-10">
         <h2
-          className="text-white font-bold text-2xl mb-4 px-6 sm:px-10"
+          className="text-white font-bold text-xl sm:text-2xl mb-4 px-6 sm:px-10"
           style={{ fontFamily: "Poltawski Nowy, serif" }}
         >
           Highlights
         </h2>
-        <div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className={gridClasses}>
           {highlights.map((cert, idx) => (
             <div
               key={idx}
@@ -341,26 +359,26 @@ const Certifications: React.FC = () => {
                   href={cert.link}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={(e) => e.stopPropagation()}
                   className="text-blue-400 text-xs sm:text-sm underline mt-1"
                 >
                   Credential
                 </a>
               )}
-              <p className="text-xs sm:text-sm text-gray-500 mt-1">
-                {cert.date}
-              </p>
+              <p className="text-xs sm:text-sm text-gray-500 mt-1">{cert.date}</p>
             </div>
           ))}
         </div>
       </div>
+
       <div>
         <h2
-          className="text-white font-bold text-2xl mb-4 px-6 sm:px-10"
+          className="text-white font-bold text-xl sm:text-2xl mb-4 px-6 sm:px-10"
           style={{ fontFamily: "Poltawski Nowy, serif" }}
         >
           All Certificates
         </h2>
-        <div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className={gridClasses}>
           {certificates.map((cert, idx) => (
             <div
               key={idx}
@@ -389,14 +407,13 @@ const Certifications: React.FC = () => {
                   href={cert.link}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={(e) => e.stopPropagation()}
                   className="text-blue-400 text-xs sm:text-sm underline mt-1"
                 >
                   Credential
                 </a>
               )}
-              <p className="text-xs sm:text-sm text-gray-500 mt-1">
-                {cert.date}
-              </p>
+              <p className="text-xs sm:text-sm text-gray-500 mt-1">{cert.date}</p>
             </div>
           ))}
         </div>
@@ -404,36 +421,58 @@ const Certifications: React.FC = () => {
 
       {/* Modal */}
       {modalIndex !== null && (
-        <div className="fixed inset-0 bg-black bg-opacity-80 flex flex-col items-center justify-center z-50 p-4">
+        <div
+          className="fixed inset-0 bg-black/80 flex flex-col items-center justify-center z-50 p-4"
+          onClick={closeModal}
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
+        >
           <button
-            className="absolute top-5 right-5 text-white text-2xl p-2 hover:text-gray-300"
-            onClick={closeModal}
+            className="absolute top-3 right-3 sm:top-5 sm:right-5 text-white text-xl sm:text-2xl p-3 hover:text-gray-300 z-10"
+            onClick={(e) => {
+              e.stopPropagation();
+              closeModal();
+            }}
+            aria-label="Close"
           >
             <FaTimes />
           </button>
           <button
-            className="absolute left-5 text-white text-3xl p-2 hover:text-gray-300"
-            onClick={prevModal}
+            className="absolute left-2 sm:left-5 top-1/2 -translate-y-1/2 text-white text-xl sm:text-3xl p-2 sm:p-3 bg-black/50 rounded-full hover:text-gray-300 z-10"
+            onClick={(e) => {
+              e.stopPropagation();
+              prevModal();
+            }}
+            aria-label="Previous"
           >
             <FaChevronLeft />
           </button>
           <button
-            className="absolute right-5 text-white text-3xl p-2 hover:text-gray-300"
-            onClick={nextModal}
+            className="absolute right-2 sm:right-5 top-1/2 -translate-y-1/2 text-white text-xl sm:text-3xl p-2 sm:p-3 bg-black/50 rounded-full hover:text-gray-300 z-10"
+            onClick={(e) => {
+              e.stopPropagation();
+              nextModal();
+            }}
+            aria-label="Next"
           >
             <FaChevronRight />
           </button>
-          <h2
-            className="text-2xl flex font-bold text-white mb-4 pr-10"
-            style={{ fontFamily: "Merriweather, serif" }}
+          <div
+            className="flex flex-col items-center max-w-full"
+            onClick={(e) => e.stopPropagation()}
           >
-            {modalData[modalIndex].name}
-          </h2>
-          <img
-            src={modalData[modalIndex].image}
-            alt={modalData[modalIndex].name}
-            className="max-h-[80vh] max-w-[90vw] sm:max-h-[85vh] sm:max-w-[85vw] object-contain rounded-lg shadow-lg"
-          />
+            <h2
+              className="text-base sm:text-2xl font-bold text-white mb-4 px-10 sm:px-12 text-center"
+              style={{ fontFamily: "Merriweather, serif" }}
+            >
+              {modalData[modalIndex].name}
+            </h2>
+            <img
+              src={modalData[modalIndex].image}
+              alt={modalData[modalIndex].name}
+              className="max-h-[70vh] max-w-[92vw] sm:max-h-[80vh] sm:max-w-[85vw] object-contain rounded-lg shadow-lg"
+            />
+          </div>
         </div>
       )}
     </motion.section>

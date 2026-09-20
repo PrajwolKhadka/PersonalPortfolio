@@ -13,15 +13,15 @@ interface MediaItem {
 }
 
 const media: MediaItem[] = [
-   {
+  {
     title: "From Classroom to Career: Voices from the IoA Student Sprint 2026",
     type: "video",
     url: "https://www.youtube.com/embed/wNceYTka12Y?start=0",
     thumbnail: "/media/maxresdefault.jpg",
-    date: "Fev 2026",
+    date: "Feb 2026",
   },
-   {
-    title: "From Assignment to Innovation : VR Chemistry Lab Changing Classroomss",
+  {
+    title: "From Assignment to Innovation : VR Chemistry Lab Changing Classrooms",
     type: "video",
     url: "https://www.youtube.com/embed/NNokAFDUAvU?start=0",
     thumbnail: "/media/ictcover.jpg",
@@ -48,33 +48,32 @@ const media: MediaItem[] = [
     thumbnail: "/media/techpana.png",
     date: "Jul 2024",
   },
-     {
+  {
     title: "AI-powered legal companion designed to support survivors of domestic violence in Nepal.",
     type: "image",
     thumbnail: "/media/hackathon.jpg",
   },
-   {
+  {
     title: "VR Chemistry Lab Demonstration at School",
     type: "image",
     thumbnail: "/media/demo.jpg",
   },
-    {
+  {
     title: "VR Chemistry Lab Demonstration at TechX@Softwarica",
     type: "image",
     thumbnail: "/media/doc33.png",
   },
-   {
+  {
     title: "VR Chemistry Lab Demonstration at School",
     type: "image",
     thumbnail: "/media/demo2.jpg",
   },
- 
   {
     title: "Idea Pitching Session @Softwarica",
     type: "image",
     thumbnail: "/media/demo4.png",
   },
-   {
+  {
     title: "Idea Pitching Session @Softwarica",
     type: "image",
     thumbnail: "/media/demo5.png",
@@ -98,10 +97,10 @@ const MediaCarousel: React.FC<MediaCarouselProps> = ({ title, items, onItemClick
 
   const scroll = (direction: "left" | "right") => {
     if (!containerRef.current) return;
-    const card = containerRef.current.querySelector("div:first-child"); 
+    const card = containerRef.current.querySelector("div:first-child");
     if (!card) return;
-    const cardWidth = (card as HTMLElement).offsetWidth + 16; 
-    
+    const cardWidth = (card as HTMLElement).offsetWidth + 16;
+
     containerRef.current.scrollBy({
       left: direction === "left" ? -cardWidth : cardWidth,
     });
@@ -113,49 +112,67 @@ const MediaCarousel: React.FC<MediaCarouselProps> = ({ title, items, onItemClick
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: "easeInOut" }}
     >
-    <section className="mb-0 relative px-4 ">
-      <h2 className="text-3xl font-bold text-white mb-4" style={{ fontFamily: "Poltawski Nowy, serif" }}>{title}</h2>
+      <section className="mb-4 relative px-2 sm:px-4">
+        <h2
+          className="text-2xl sm:text-3xl font-bold text-white mb-4"
+          style={{ fontFamily: "Poltawski Nowy, serif" }}
+        >
+          {title}
+        </h2>
 
-      {items.length > 0 && (
-        <>
-          <button
-            onClick={() => scroll("left")}
-            className="absolute -left-2 top-38 -translate-y-1/2 z-20 p-2 sm:p-3 bg-gray-800 text-white rounded-full hover:bg-gray-700 hidden sm:block"
-            aria-label="Scroll Left"
-          >
-            <FaChevronLeft />
-          </button>
-          <button
-            onClick={() => scroll("right")}
-            className="absolute -right-2 top-38 -translate-y-1/2 z-20 p-2 sm:p-3 bg-gray-800 text-white rounded-full hover:bg-gray-700 hidden sm:block"
-            aria-label="Scroll Right"
-          >
-            <FaChevronRight />
-          </button>
-        </>
-      )}
+        {items.length > 0 && (
+          <>
+            {/* Arrows are desktop-only; on touch screens people swipe */}
+            <button
+              onClick={() => scroll("left")}
+              className="absolute -left-2 top-38 -translate-y-1/2 z-20 p-2 sm:p-3 bg-gray-800 text-white rounded-full hover:bg-gray-700 hidden sm:block"
+              aria-label="Scroll Left"
+            >
+              <FaChevronLeft />
+            </button>
+            <button
+              onClick={() => scroll("right")}
+              className="absolute -right-2 top-38 -translate-y-1/2 z-20 p-2 sm:p-3 bg-gray-800 text-white rounded-full hover:bg-gray-700 hidden sm:block"
+              aria-label="Scroll Right"
+            >
+              <FaChevronRight />
+            </button>
+          </>
+        )}
 
-      <div
-        ref={containerRef}
-        className="flex overflow-x-auto space-x-7 gap-4 sm:gap-6 hide-scrollbar snap-x snap-mandatory scroll-smooth text-white" 
-      >
-        {items.map((item, idx) => (
-          <div
-            key={idx}
-            onClick={() => onItemClick(startIndex + idx)}
-            className="min-w-[250px] rounded-xl p-4 flex-shrink-0 flex flex-col items-center cursor-pointer snap-start"
-          >
-            <img
-              src={item.thumbnail}
-              alt={item.title}
-              className="w-full h-40 object-cover rounded-lg mb-2"
-            />
-            <h3 className="text-0xl font-normal text-center break-words max-w-[250px]" style={{ fontFamily: "Poltawski Nowy, serif" }} >{item.title}</h3>
-            {item.date && <p className="text-sm text-gray-400 mt-1" style={{ fontFamily: "Poltawski Nowy, serif" }} >{item.date}</p>}
-          </div>
-        ))}
-      </div>
-    </section>
+        <div
+          ref={containerRef}
+          className="flex overflow-x-auto gap-3 sm:gap-8 hide-scrollbar snap-x snap-mandatory scroll-smooth text-white"
+        >
+          {items.map((item, idx) => (
+            <div
+              key={idx}
+              onClick={() => onItemClick(startIndex + idx)}
+              className="w-[240px] sm:w-[260px] rounded-xl p-3 sm:p-4 shrink-0 flex flex-col items-center cursor-pointer snap-start"
+            >
+              <img
+                src={item.thumbnail}
+                alt={item.title}
+                className="w-full h-36 sm:h-40 object-cover rounded-lg mb-2"
+              />
+              <h3
+                className="text-base font-normal text-center break-words max-w-full"
+                style={{ fontFamily: "Poltawski Nowy, serif" }}
+              >
+                {item.title}
+              </h3>
+              {item.date && (
+                <p
+                  className="text-sm text-gray-400 mt-1"
+                  style={{ fontFamily: "Poltawski Nowy, serif" }}
+                >
+                  {item.date}
+                </p>
+              )}
+            </div>
+          ))}
+        </div>
+      </section>
     </motion.section>
   );
 };
@@ -164,15 +181,21 @@ const Modal: React.FC<{ item: MediaItem | null; onClose: () => void }> = ({ item
   if (!item) return null;
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-80 z-50 flex justify-center items-center p-4 ">
-      <div className= "max-w-4xl w-full p-9">
-        <button
-          onClick={onClose}
-          className="absolute top-6 right-10 text-white text-2xl hover:text-gray-400 z-10 p-2"
-          aria-label="Close"
-        >
-          <FaTimes />
-        </button>
+    <div
+      className="fixed inset-0 bg-black/80 z-50 flex justify-center items-center p-2 sm:p-4 overflow-y-auto"
+      onClick={onClose}
+    >
+      <button
+        onClick={onClose}
+        className="fixed top-3 right-3 sm:top-6 sm:right-10 text-white text-xl sm:text-2xl hover:text-gray-400 z-10 p-3 bg-black/40 rounded-full"
+        aria-label="Close"
+      >
+        <FaTimes />
+      </button>
+      <div
+        className="relative max-w-4xl w-full p-2 sm:p-9"
+        onClick={(e) => e.stopPropagation()}
+      >
         <div className="relative w-full">
           {item.type === "video" && item.url ? (
             <div className="relative pt-[56.25%]">
@@ -189,7 +212,7 @@ const Modal: React.FC<{ item: MediaItem | null; onClose: () => void }> = ({ item
               src={item.thumbnail}
               alt={item.title}
               loading="lazy"
-              className="w-full max-h-[80vh] object-contain rounded-lg"
+              className="w-full max-h-[75vh] sm:max-h-[80vh] object-contain rounded-lg"
             />
           ) : (
             <p className="text-white">Content type not supported for modal viewing yet.</p>
@@ -197,13 +220,14 @@ const Modal: React.FC<{ item: MediaItem | null; onClose: () => void }> = ({ item
         </div>
 
         {item.title && (
-          <h3 className="text-white text-lg font-semibold mt-4 text-center">{item.title}</h3>
+          <h3 className="text-white text-base sm:text-lg font-semibold mt-4 text-center">
+            {item.title}
+          </h3>
         )}
       </div>
     </div>
   );
 };
-
 
 const Media: React.FC = () => {
   const [modalIndex, setModalIndex] = useState<number | null>(null);
@@ -215,14 +239,14 @@ const Media: React.FC = () => {
   const images = media.filter((m) => m.type === "image");
   const websites = media.filter((m) => m.type === "website");
   useEffect(() => {
-      const handleKeyDown = (e: KeyboardEvent) => {
-        if (modalIndex !== null) {
-          if (e.key === "Escape") closeModal();
-        }
-      };
-      window.addEventListener("keydown", handleKeyDown);
-      return () => window.removeEventListener("keydown", handleKeyDown);
-    }, [modalIndex]);
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (modalIndex !== null) {
+        if (e.key === "Escape") closeModal();
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [modalIndex]);
   let currentIndex = 0;
   const videoStartIndex = currentIndex;
   currentIndex += videos.length;
@@ -233,47 +257,41 @@ const Media: React.FC = () => {
   const websiteStartIndex = currentIndex;
   currentIndex += websites.length;
   return (
-    <section className="px-6 md:px-16 lg:px-12 py-9 min-h-screen ">
-      <h1 className="text-white font-bold text-3xl sm:text-4xl mb-10" style={{ fontFamily: "Poltawski Nowy, serif" }}>
+    <section className="px-4 sm:px-6 md:px-12 lg:px-16 py-8 md:py-9 min-h-screen">
+      <h1
+        className="text-white font-bold text-3xl sm:text-4xl mb-6 sm:mb-10"
+        style={{ fontFamily: "Poltawski Nowy, serif" }}
+      >
         Media & Coverage
       </h1>
 
       {videos.length > 0 && (
-        <>
-          <MediaCarousel 
-            title="Videos" 
-            items={videos} 
-            onItemClick={openModal} 
-            startIndex={videoStartIndex}
-          />
-        </>
+        <MediaCarousel
+          title="Videos"
+          items={videos}
+          onItemClick={openModal}
+          startIndex={videoStartIndex}
+        />
       )}
-      
+
       {images.length > 0 && (
-        <>
-          <MediaCarousel 
-            title="Images" 
-            items={images} 
-            onItemClick={openModal} 
-            startIndex={imageStartIndex}
-          />
-        </>
+        <MediaCarousel
+          title="Images"
+          items={images}
+          onItemClick={openModal}
+          startIndex={imageStartIndex}
+        />
       )}
-      
+
       {websites.length > 0 && (
-        <>
-          <MediaCarousel 
-            title="Websites" 
-            items={websites} 
-            onItemClick={openModal} 
-            startIndex={websiteStartIndex}
-          />
-        </>
+        <MediaCarousel
+          title="Websites"
+          items={websites}
+          onItemClick={openModal}
+          startIndex={websiteStartIndex}
+        />
       )}
-      <Modal 
-        item={modalIndex !== null ? media[modalIndex] : null} 
-        onClose={closeModal} 
-      />
+      <Modal item={modalIndex !== null ? media[modalIndex] : null} onClose={closeModal} />
     </section>
   );
 };
