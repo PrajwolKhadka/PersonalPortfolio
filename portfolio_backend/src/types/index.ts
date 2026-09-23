@@ -1,6 +1,6 @@
 export interface PortfolioItem {
   id: number;
-  type: 'personal_info' | 'skill' | 'certificate' | 'project' | 'blog';
+  type: 'personal_info' | 'skill' | 'certificate' | 'project' | 'blog' | 'experience' | 'award';
   title: string;
   content: string;
   embeddings: number[];
