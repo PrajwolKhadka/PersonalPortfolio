@@ -10,7 +10,7 @@ const navLinks = [
   { to: "/certifications", label: "Certifications" },
   { to: "/media", label: "Media Coverage" },
   { to: "/blogs", label: "Blogs" },
-  {to: "/chat", label: "Blogs"}
+  {to: "/chat", label: "ChatBot"}
 ];
 
 const dotoFont = { fontFamily: "'Doto', sans-serif" };
