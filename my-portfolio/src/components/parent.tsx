@@ -29,6 +29,7 @@ const Parent: React.FC = () => {
               <Route path="/certifications" element={<Certifications />} />
               <Route path="/media" element={<Media />} />
               <Route path="/blogs" element={<Blog />} />
+              <Route path="/chat" element={<Chatbot/>}/>
             </Routes>
           </Suspense>
         </AnimatePresence>
