@@ -9,14 +9,14 @@ interface Intent {
 
 export const intents: Intent[] = [
     {
-         name: "greetings",
+        name: "greetings",
         keywords: [
             "hello", "namaste", "hi"
         ],
-        response: () => `Hello!🤗 I'm a chatbot assistant here to assist you. You can ask me Name, Education, Skills, Certificates, Projects, Blogs, and How to reach out`,
+        response: () => `Hello!🤗 I'm a chatbot assistant here to assist you. You can ask me Name, Education, Skills, Experience, Awards, Certificates, Projects, Blogs, and How to reach out`,
     },
-     {
-         name: "reachout",
+    {
+        name: "reachout",
         keywords: [
             "how to contact", "contact", "talk", "reach out", "conversation"
         ],
@@ -30,7 +30,7 @@ export const intents: Intent[] = [
             "your studies", "school", "college", "university", "academic",
             "educaton", "edu", "edcation"
         ],
-        response: () => `My education: ${portfolioData.education}`,
+        response: () => `My education:\n${portfolioData.education.join("\n")}`,
     },
     {
         name: "skills",
@@ -40,7 +40,31 @@ export const intents: Intent[] = [
             "what skills do you have", "what are you good at",
             "abilities", "competence", "proficiencies", "skils"
         ],
-        response: () => `My skills are: ${portfolioData.skills.join(", ")}`,
+        response: () => {
+            const s = portfolioData.skills;
+            return `My skills are:\nLanguages: ${s.languages.join(", ")}\nFrameworks & Libraries: ${s.frameworks.join(", ")}\nData & Analytics: ${s.dataAndAnalytics.join(", ")}\nOther: ${s.other.join(", ")}`;
+        },
+    },
+    {
+        name: "experience",
+        keywords: [
+            "experience", "work experience", "job", "jobs", "career",
+            "where have you worked", "your experience", "work history",
+            "employment", "roles", "past work", "workplace"
+        ],
+        response: () =>
+            `My work experience:\n${portfolioData.experience
+                .map(e => `${e.role} at ${e.organization} (${e.period})`).join("\n")}`,
+    },
+    {
+        name: "awards",
+        keywords: [
+            "award", "awards", "achievements", "wins", "won",
+            "competitions", "hackathon", "recognition", "prizes",
+            "accolades", "honors"
+        ],
+        response: () =>
+            `Some things I've won:\n${portfolioData.awards.join("\n")}`,
     },
     {
         name: "certificates",

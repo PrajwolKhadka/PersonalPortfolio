@@ -110,22 +110,22 @@ router.post('/', async (req: Request, res: Response) => {
       });
     }
 
-    console.log(`💬 Received query: "${message}"`);
+    console.log(`Received query: "${message}"`);
 
     const portfolio = await loadPortfolio();
 
     const results = await searchSimilar(message, portfolio, 15);
-    console.log(`🔍 Top matches: ${results.map(r => `"${r.item.title}" (${r.similarity.toFixed(2)})`).join(', ')}`);
+    console.log(`Top matches: ${results.map(r => `"${r.item.title}" (${r.similarity.toFixed(2)})`).join(', ')}`);
 
     const context = results
       .map((r, i) => `[${i + 1}] ${r.item.type}: ${r.item.title}\n${r.item.content}`)
       .join('\n\n');
 
-    console.log('🤖 Generating AI response...');
+    console.log('Generating AI response...');
     const aiResponse = await generateResponse(message, context);
 
     const processingTime = Date.now() - startTime;
-    console.log(`✅ Response generated in ${processingTime}ms`);
+    console.log(`Response generated in ${processingTime}ms`);
 
     const response: ChatResponse = {
       response: aiResponse,
@@ -139,7 +139,7 @@ router.post('/', async (req: Request, res: Response) => {
     res.json(response);
 
   } catch (error) {
-    console.error('❌ Chat error:', error);
+    console.error('Chat error:', error);
     const errorMessage = error instanceof Error ? error.message : 'Unknown error occurred';
     res.status(500).json({
       error: 'Failed to process chat request',

@@ -4,9 +4,9 @@ let embedder: FeatureExtractionPipeline | null = null;
 
 async function getEmbedder(): Promise<FeatureExtractionPipeline> {
   if (!embedder) {
-    console.log('🔄 Loading embedding model (first time only)...');
+    console.log('Loading embedding model (first time only)...');
     embedder = await pipeline('feature-extraction', 'Xenova/all-MiniLM-L6-v2') as FeatureExtractionPipeline;
-    console.log('✅ Embedding model loaded');
+    console.log('Embedding model loaded');
   }
   return embedder;
 }

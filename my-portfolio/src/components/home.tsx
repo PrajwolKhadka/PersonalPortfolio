@@ -1,6 +1,5 @@
 import React from "react";
 import myPhoto from "../assets/profile.png";
-import Chatbot from "../components/chatbot.tsx";
 
 const Home: React.FC = () => {
   return (
