@@ -9,7 +9,7 @@ load_dotenv()
 JINA_API_KEY = os.environ.get("JINA_API_KEY", "")
 if not JINA_API_KEY:
     raise SystemExit(
-        "❌ JINA_API_KEY is not set. Get a free key at https://jina.ai/api-dashboard/key-manager "
+        "JINA_API_KEY is not set. Get a free key at https://jina.ai/api-dashboard/key-manager "
         "and add JINA_API_KEY=... to your .env file."
     )
 
@@ -37,7 +37,7 @@ for idx, item in enumerate(portfolio):
     )
 
     if response.status_code != 200:
-        print(f"❌ Error on item {idx + 1}: {response.status_code}")
+        print(f"Error on item {idx + 1}: {response.status_code}")
         print(f"Response: {response.text}")
         print(f"Failed on: {item['title']}")
         break
@@ -53,4 +53,4 @@ for idx, item in enumerate(portfolio):
 with open(PORTFOLIO_PATH, "w", encoding="utf-8") as f:
     json.dump(portfolio, f, ensure_ascii=False, indent=2)
 
-print("✅ All embeddings regenerated with Jina AI!")
+print("All embeddings regenerated with Jina AI!")

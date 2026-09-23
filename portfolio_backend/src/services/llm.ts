@@ -9,14 +9,27 @@ import {
 
 const ai = new GoogleGenAI({ apiKey: API_KEY });
 
-const openrouter = new OpenAI({
-  baseURL: 'https://openrouter.ai/api/v1',
-  apiKey: OPENROUTER_API_KEY,
-});
+// Constructed lazily (only when actually needed) so a missing
+// OPENROUTER_API_KEY causes the fallback path to fail gracefully
+// instead of crashing the whole process at startup/import time.
+let openrouter: OpenAI | null = null;
+function getOpenRouterClient(): OpenAI | null {
+  if (!OPENROUTER_API_KEY) return null;
+  if (!openrouter) {
+    openrouter = new OpenAI({
+      baseURL: 'https://openrouter.ai/api/v1',
+      apiKey: OPENROUTER_API_KEY,
+    });
+  }
+  return openrouter;
+}
 
 function buildPrompt(query: string, context: string) {
-  return `You are a helpful AI assistant answering questions about Prajwol Khadka's portfolio by other people.
-Make sure if anything inappropriate or illegal is asked respond with "I can't answer this as the topic goes against my code of conduct."
+  return `You are a portfolio assistant for Prajwol Khadka's personal website. You answer questions ONLY about Prajwol — his projects, skills, experience, education, awards, certificates, and how to contact him.
+
+If the user asks anything NOT about Prajwol or his portfolio (general knowledge, math, coding help unrelated to his work, unrelated small talk, etc.), do NOT answer it. Instead, briefly and politely say that's outside what you can help with here, and redirect them to ask about Prajwol's work.
+
+If anything inappropriate or illegal is asked, respond with "I can't answer this as the topic goes against my code of conduct."
 
 Here is the relevant portfolio information:
 
@@ -24,7 +37,7 @@ ${context}
 
 User question: ${query}
 
-Please provide a helpful, accurate response based on the portfolio information above. Be conversational and friendly.`;
+If the question is about Prajwol's portfolio, answer it conversationally and accurately using only the information above. If it isn't, redirect as instructed. Do not pad on-topic answers with unrelated trivia or unsolicited extra offers.`;
 }
 
 // Gemini is tried first across a list of models. If every Gemini model
@@ -54,11 +67,17 @@ async function tryGemini(prompt: string): Promise<string | null> {
 }
 
 async function tryOpenRouter(prompt: string): Promise<string | null> {
+  const client = getOpenRouterClient();
+  if (!client) {
+    console.warn('OPENROUTER_API_KEY is not set — skipping OpenRouter fallback');
+    return null;
+  }
+
   for (const model of OPENROUTER_MODELS_TO_TRY) {
     try {
       console.log(`Trying OpenRouter model: ${model}`);
 
-      const response = await openrouter.chat.completions.create({
+      const response = await client.chat.completions.create({
         model,
         messages: [{ role: 'user', content: prompt }],
         temperature: 0.7,
